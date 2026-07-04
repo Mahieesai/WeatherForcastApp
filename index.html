@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- helps the layout fit phones and tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- icons used in the weather card -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="weather-card">
+
+        <!-- city search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city"
+                autocomplete="off"
+            >
+
+            <button id="searchBtn" aria-label="Search city">
+                <i class="bx bx-search"></i>
+            </button>
+
+        </div>
+
+
+        <!-- loading and error messages appear here -->
+        <p id="message" class="message"></p>
+
+
+        <!-- shown before weather is loaded -->
+        <section id="welcomeBox" class="welcome-box">
+
+            <i class="bx bx-current-location"></i>
+
+            <h1>Finding Your Location</h1>
+
+            <p>
+                Allow location access or search for a city above.
+            </p>
+
+        </section>
+
+
+        <!-- current weather -->
+        <section id="weatherContent" class="weather-content hidden">
+
+            <div class="location-row">
+
+                <div class="location-name">
+                    <i class="bx bx-map"></i>
+
+                    <h2 id="cityName">--</h2>
+                </div>
+
+
+                <div class="date-time">
+                    <p id="currentDate">--</p>
+                    <span id="currentTime">--</span>
+                </div>
+
+            </div>
+
+
+            <!-- main weather area -->
+            <div class="main-weather">
+
+                <div class="weather-icon-box">
+
+                    <img
+                        id="weatherIcon"
+                        src=""
+                        alt="Weather condition"
+                    >
+
+                </div>
+
+
+                <div class="temperature-box">
+
+                    <h1 id="temperature">--°C</h1>
+
+                    <p id="description">--</p>
+
+                    <span id="feelsLike">
+                        Feels like --°C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- humidity and wind -->
+            <div class="weather-details">
+
+                <div class="detail-card">
+
+                    <i class="bx bx-droplet"></i>
+
+                    <div>
+                        <p>Humidity</p>
+                        <h3 id="humidity">--%</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <i class="bx bx-wind"></i>
+
+                    <div>
+                        <p>Wind Speed</p>
+                        <h3 id="windSpeed">-- km/h</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- next three days -->
+            <section class="forecast-section">
+
+                <h2 class="forecast-title">
+                    3-Day Forecast
+                </h2>
+
+                <div
+                    id="forecastContainer"
+                    class="forecast-container"
+                >
+                    <!-- javascript adds forecast cards here -->
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
